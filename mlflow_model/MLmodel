@@ -1,0 +1,130 @@
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.2.1
+mlflow_version: 2.10.2
+model_size_bytes: 1912550
+model_uuid: 2b6c08a604cf4f839c8069689643cc8b
+signature:
+  inputs: '[{"type": "double", "name": "AMT_CREDIT_s", "required": true}, {"type":
+    "double", "name": "AMT_ANNUITY_s", "required": true}, {"type": "double", "name":
+    "AMT_GOODS_PRICE_s", "required": true}, {"type": "double", "name": "REGION_POPULATION_RELATIVE_s",
+    "required": true}, {"type": "double", "name": "DAYS_BIRTH_s", "required": true},
+    {"type": "double", "name": "DAYS_EMPLOYED_s", "required": true}, {"type": "double",
+    "name": "DAYS_REGISTRATION_s", "required": true}, {"type": "double", "name": "DAYS_ID_PUBLISH_s",
+    "required": true}, {"type": "double", "name": "HOUR_APPR_PROCESS_START_s", "required":
+    true}, {"type": "double", "name": "EXT_SOURCE_1_s", "required": true}, {"type":
+    "double", "name": "EXT_SOURCE_2_s", "required": true}, {"type": "double", "name":
+    "EXT_SOURCE_3_s", "required": true}, {"type": "double", "name": "DAYS_LAST_PHONE_CHANGE_s",
+    "required": true}, {"type": "double", "name": "DAYS_EMPLOYED_PERC_s", "required":
+    true}, {"type": "double", "name": "INCOME_CREDIT_PERC_s", "required": true}, {"type":
+    "double", "name": "INCOME_PER_PERSON_s", "required": true}, {"type": "double",
+    "name": "ANNUITY_INCOME_PERC_s", "required": true}, {"type": "double", "name":
+    "PAYMENT_RATE_s", "required": true}, {"type": "double", "name": "BURO_DAYS_CREDIT_MIN_s",
+    "required": true}, {"type": "double", "name": "BURO_DAYS_CREDIT_MAX_s", "required":
+    true}, {"type": "double", "name": "BURO_DAYS_CREDIT_MEAN_s", "required": true},
+    {"type": "double", "name": "BURO_DAYS_CREDIT_ENDDATE_MIN_s", "required": true},
+    {"type": "double", "name": "BURO_DAYS_CREDIT_ENDDATE_MAX_s", "required": true},
+    {"type": "double", "name": "BURO_DAYS_CREDIT_ENDDATE_MEAN_s", "required": true},
+    {"type": "double", "name": "BURO_DAYS_CREDIT_UPDATE_MEAN_s", "required": true},
+    {"type": "double", "name": "BURO_AMT_CREDIT_MAX_OVERDUE_MEAN_s", "required": true},
+    {"type": "double", "name": "BURO_AMT_CREDIT_SUM_MAX_s", "required": true}, {"type":
+    "double", "name": "BURO_AMT_CREDIT_SUM_MEAN_s", "required": true}, {"type": "double",
+    "name": "BURO_AMT_CREDIT_SUM_SUM_s", "required": true}, {"type": "double", "name":
+    "BURO_AMT_CREDIT_SUM_DEBT_MEAN_s", "required": true}, {"type": "double", "name":
+    "BURO_AMT_CREDIT_SUM_DEBT_SUM_s", "required": true}, {"type": "double", "name":
+    "BURO_CREDIT_ACTIVE_Active_MEAN_s", "required": true}, {"type": "double", "name":
+    "BURO_CREDIT_ACTIVE_Closed_MEAN_s", "required": true}, {"type": "double", "name":
+    "BURO_STATUS_1_MEAN_MEAN_s", "required": true}, {"type": "double", "name": "ACTIVE_DAYS_CREDIT_MAX_s",
+    "required": true}, {"type": "double", "name": "ACTIVE_DAYS_CREDIT_ENDDATE_MAX_s",
+    "required": true}, {"type": "double", "name": "ACTIVE_DAYS_CREDIT_ENDDATE_MEAN_s",
+    "required": true}, {"type": "double", "name": "ACTIVE_AMT_CREDIT_SUM_SUM_s", "required":
+    true}, {"type": "double", "name": "ACTIVE_AMT_CREDIT_SUM_DEBT_SUM_s", "required":
+    true}, {"type": "double", "name": "CLOSED_DAYS_CREDIT_MIN_s", "required": true},
+    {"type": "double", "name": "CLOSED_DAYS_CREDIT_MAX_s", "required": true}, {"type":
+    "double", "name": "CLOSED_DAYS_CREDIT_MEAN_s", "required": true}, {"type": "double",
+    "name": "CLOSED_DAYS_CREDIT_VAR_s", "required": true}, {"type": "double", "name":
+    "CLOSED_DAYS_CREDIT_ENDDATE_MIN_s", "required": true}, {"type": "double", "name":
+    "CLOSED_DAYS_CREDIT_ENDDATE_MAX_s", "required": true}, {"type": "double", "name":
+    "CLOSED_DAYS_CREDIT_ENDDATE_MEAN_s", "required": true}, {"type": "double", "name":
+    "CLOSED_DAYS_CREDIT_UPDATE_MEAN_s", "required": true}, {"type": "double", "name":
+    "CLOSED_AMT_CREDIT_SUM_MAX_s", "required": true}, {"type": "double", "name": "CLOSED_AMT_CREDIT_SUM_MEAN_s",
+    "required": true}, {"type": "double", "name": "CLOSED_AMT_CREDIT_SUM_SUM_s", "required":
+    true}, {"type": "double", "name": "PREV_AMT_ANNUITY_MIN_s", "required": true},
+    {"type": "double", "name": "PREV_AMT_ANNUITY_MAX_s", "required": true}, {"type":
+    "double", "name": "PREV_AMT_ANNUITY_MEAN_s", "required": true}, {"type": "double",
+    "name": "PREV_AMT_APPLICATION_MAX_s", "required": true}, {"type": "double", "name":
+    "PREV_AMT_CREDIT_MAX_s", "required": true}, {"type": "double", "name": "PREV_AMT_CREDIT_MEAN_s",
+    "required": true}, {"type": "double", "name": "PREV_APP_CREDIT_PERC_MEAN_s", "required":
+    true}, {"type": "double", "name": "PREV_AMT_GOODS_PRICE_MIN_s", "required": true},
+    {"type": "double", "name": "PREV_AMT_GOODS_PRICE_MEAN_s", "required": true}, {"type":
+    "double", "name": "PREV_HOUR_APPR_PROCESS_START_MEAN_s", "required": true}, {"type":
+    "double", "name": "PREV_DAYS_DECISION_MIN_s", "required": true}, {"type": "double",
+    "name": "PREV_DAYS_DECISION_MAX_s", "required": true}, {"type": "double", "name":
+    "PREV_DAYS_DECISION_MEAN_s", "required": true}, {"type": "double", "name": "PREV_CNT_PAYMENT_MEAN_s",
+    "required": true}, {"type": "double", "name": "PREV_CNT_PAYMENT_SUM_s", "required":
+    true}, {"type": "double", "name": "PREV_NAME_CONTRACT_STATUS_Refused_MEAN_s",
+    "required": true}, {"type": "double", "name": "PREV_CODE_REJECT_REASON_HC_MEAN_s",
+    "required": true}, {"type": "double", "name": "PREV_NAME_PRODUCT_TYPE_walkin_MEAN_s",
+    "required": true}, {"type": "double", "name": "PREV_NAME_YIELD_GROUP_high_MEAN_s",
+    "required": true}, {"type": "double", "name": "APPROVED_AMT_ANNUITY_MIN_s", "required":
+    true}, {"type": "double", "name": "APPROVED_AMT_ANNUITY_MAX_s", "required": true},
+    {"type": "double", "name": "APPROVED_AMT_ANNUITY_MEAN_s", "required": true}, {"type":
+    "double", "name": "APPROVED_AMT_APPLICATION_MAX_s", "required": true}, {"type":
+    "double", "name": "APPROVED_AMT_CREDIT_MIN_s", "required": true}, {"type": "double",
+    "name": "APPROVED_AMT_CREDIT_MAX_s", "required": true}, {"type": "double", "name":
+    "APPROVED_AMT_CREDIT_MEAN_s", "required": true}, {"type": "double", "name": "APPROVED_APP_CREDIT_PERC_MAX_s",
+    "required": true}, {"type": "double", "name": "APPROVED_APP_CREDIT_PERC_MEAN_s",
+    "required": true}, {"type": "double", "name": "APPROVED_AMT_GOODS_PRICE_MIN_s",
+    "required": true}, {"type": "double", "name": "APPROVED_AMT_GOODS_PRICE_MAX_s",
+    "required": true}, {"type": "double", "name": "APPROVED_AMT_GOODS_PRICE_MEAN_s",
+    "required": true}, {"type": "double", "name": "APPROVED_HOUR_APPR_PROCESS_START_MEAN_s",
+    "required": true}, {"type": "double", "name": "APPROVED_DAYS_DECISION_MIN_s",
+    "required": true}, {"type": "double", "name": "APPROVED_DAYS_DECISION_MAX_s",
+    "required": true}, {"type": "double", "name": "APPROVED_DAYS_DECISION_MEAN_s",
+    "required": true}, {"type": "double", "name": "APPROVED_CNT_PAYMENT_MEAN_s", "required":
+    true}, {"type": "double", "name": "APPROVED_CNT_PAYMENT_SUM_s", "required": true},
+    {"type": "double", "name": "POS_MONTHS_BALANCE_MAX_s", "required": true}, {"type":
+    "double", "name": "POS_MONTHS_BALANCE_MEAN_s", "required": true}, {"type": "double",
+    "name": "POS_MONTHS_BALANCE_SIZE_s", "required": true}, {"type": "double", "name":
+    "POS_SK_DPD_MAX_s", "required": true}, {"type": "double", "name": "POS_SK_DPD_DEF_MEAN_s",
+    "required": true}, {"type": "double", "name": "POS_NAME_CONTRACT_STATUS_Completed_MEAN_s",
+    "required": true}, {"type": "double", "name": "POS_COUNT_s", "required": true},
+    {"type": "double", "name": "INSTAL_DPD_MEAN_s", "required": true}, {"type": "double",
+    "name": "INSTAL_DBD_MAX_s", "required": true}, {"type": "double", "name": "INSTAL_DBD_MEAN_s",
+    "required": true}, {"type": "double", "name": "INSTAL_DBD_SUM_s", "required":
+    true}, {"type": "double", "name": "INSTAL_PAYMENT_PERC_MEAN_s", "required": true},
+    {"type": "double", "name": "INSTAL_PAYMENT_PERC_SUM_s", "required": true}, {"type":
+    "double", "name": "INSTAL_PAYMENT_DIFF_MAX_s", "required": true}, {"type": "double",
+    "name": "INSTAL_PAYMENT_DIFF_MEAN_s", "required": true}, {"type": "double", "name":
+    "INSTAL_PAYMENT_DIFF_SUM_s", "required": true}, {"type": "double", "name": "INSTAL_AMT_INSTALMENT_MAX_s",
+    "required": true}, {"type": "double", "name": "INSTAL_AMT_INSTALMENT_MEAN_s",
+    "required": true}, {"type": "double", "name": "INSTAL_AMT_INSTALMENT_SUM_s", "required":
+    true}, {"type": "double", "name": "INSTAL_AMT_PAYMENT_MIN_s", "required": true},
+    {"type": "double", "name": "INSTAL_AMT_PAYMENT_MAX_s", "required": true}, {"type":
+    "double", "name": "INSTAL_AMT_PAYMENT_MEAN_s", "required": true}, {"type": "double",
+    "name": "INSTAL_AMT_PAYMENT_SUM_s", "required": true}, {"type": "double", "name":
+    "INSTAL_DAYS_ENTRY_PAYMENT_MAX_s", "required": true}, {"type": "double", "name":
+    "INSTAL_DAYS_ENTRY_PAYMENT_MEAN_s", "required": true}, {"type": "double", "name":
+    "INSTAL_DAYS_ENTRY_PAYMENT_SUM_s", "required": true}, {"type": "double", "name":
+    "INSTAL_COUNT_s", "required": true}, {"type": "double", "name": "CC_CNT_DRAWINGS_ATM_CURRENT_MEAN_s",
+    "required": true}, {"type": "double", "name": "CC_CNT_DRAWINGS_CURRENT_MAX_s",
+    "required": true}, {"type": "double", "name": "CC_CNT_DRAWINGS_CURRENT_MEAN_s",
+    "required": true}, {"type": "double", "name": "CC_CNT_DRAWINGS_CURRENT_VAR_s",
+    "required": true}, {"type": "double", "name": "CC_CNT_DRAWINGS_POS_CURRENT_MAX_s",
+    "required": true}, {"type": "double", "name": "CC_CNT_DRAWINGS_POS_CURRENT_MEAN_s",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1,
+    2]}}]'
+  params: null
+utc_time_created: '2024-04-26 20:34:25.657483'
