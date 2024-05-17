@@ -25,8 +25,8 @@ def chargement_files():
     df = pd.read_csv('submission_file_name.csv')
     xtest = pd.read_csv('xtest_norm.csv')
     xtest_brut = pd.read_csv('xtest.csv')
-    xtrain = pd.read_csv('xtrain.csv')
-    ytrain = pd.read_csv('target.csv')
+    xtrain = pd.read_csv('xtrain_.csv')
+    ytrain = pd.read_csv('target.csv',nrows=10000))
     return df,xtest,xtest_brut,xtrain,ytrain
 
 df,xtest,xtest_brut,xtrain,ytrain = chargement_files()
