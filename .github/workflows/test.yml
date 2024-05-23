@@ -25,7 +25,7 @@ jobs:
       run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
     - name: Deploy with rsync
-      run: rsync -avz ./mlflow_model/ ${{ secrets.USER_NAME }}@${{ secrets.SSH_HOST }}:/home/ec2-user/mlflow_model/
+      run: rsync -avz mlflow_model/ ${{ secrets.USER_NAME }}@${{ secrets.SSH_HOST }}:/home/ec2-user/mlflow_model/
           
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
