@@ -9,14 +9,25 @@
 name: Test
 
 on: [push, pull_request]
-
+  
 jobs:
-  tests:
+  deployTest:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.10"]
     steps:
+    - uses: actions/checkout@v2 
+    - name: Build & Deploy
+      env:
+            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            HOSTNAME: ${{secrets.SSH_HOST}}
+            USER_NAME: ${{secrets.USER_NAME}}
+      
+      run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} 
+          scp ./API_score_impaye.py ${USER_NAME}@${HOSTNAME} 
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
