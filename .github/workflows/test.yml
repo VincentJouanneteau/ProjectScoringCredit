@@ -17,16 +17,13 @@ jobs:
       matrix:
         python-version: ["3.10"]
     steps:
-    - uses: actions/checkout@v2 
-    - name: Build & Deploy
-      env:
-            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-            HOSTNAME: ${{secrets.SSH_HOST}}
-            USER_NAME: ${{secrets.USER_NAME}}
-      
-      run: |
-          ssh -o StrictHostKeyChecking=no -i ${PRIVATE_KEY} ${USER_NAME}@${HOSTNAME} 
-          scp ./API_score_impaye.py ${USER_NAME}@${HOSTNAME} 
+    - name: Execute SSH commmands on remote server
+      uses: JimCronqvist/action-ssh@master
+      with:
+        hosts: 'ec2-user@ec2-13-39-87-160.eu-west-3.compute.amazonaws.com'
+        privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+        command: ls -lah
+    
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
