@@ -16,6 +16,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: AWS_EC2
     steps:
+    - uses: actions/checkout@v2 
+    - name: acces par SSH
+      env:
+            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            HOSTNAME: ${{secrets.SSH_HOST}}
+            USER_NAME: ${{secrets.USER_NAME}} 
+      run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "ls"
+
+    
     - name: copy API via ssh key
       uses: appleboy/scp-action@v0.1.7
       with:
@@ -33,9 +44,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "mlflow_model/"
           target: "./"          
-
+    
     - uses: actions/checkout@v2 
-    - name: Lancement API sur le serveur AWS
+    - name: acces par SSH
       env:
             PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
             HOSTNAME: ${{secrets.SSH_HOST}}
@@ -43,7 +54,6 @@ jobs:
       run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "python3 API_score_impaye &&"
-              # commande depuis le serveur AWS -- copie de l'API et model pickle 
     
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
