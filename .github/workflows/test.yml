@@ -25,7 +25,7 @@ jobs:
       
       run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "pwd"
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "ls"
               # commande depuis le serveur AWS -- copie de l'API et model pickle 
           
     - uses: actions/checkout@v4
