@@ -9,23 +9,23 @@
 name: Test
 
 on: [push, pull_request]
-  
+
 jobs:
-  deployTest:
+  Deploy:
+    name: Deploy to EC2
     runs-on: ubuntu-latest
     environment: AWS_EC2
     steps:
-    - name: Install SSH Key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-        
-    - name: Adding Known Hosts
-      run: ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-    
-    - name: Deploy with rsync
-      run: rsync -avz -e "ssh -p 22" https://github.com/VincentJouanneteau/ProjectScoringCredit/blob/5911feca20e37c3364f04ca80c6699cba7b9c6bd/API_score_impaye.py ${{ secrets.USER_NAME }}@${{ secrets.SSH_HOST }}:./
+    - uses: actions/checkout@v2 
+    - name: Build & Deploy
+      env:
+            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            HOSTNAME: ${{secrets.SSH_HOST}}
+            USER_NAME: ${{secrets.USER_NAME}}
+      
+      run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
           
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
