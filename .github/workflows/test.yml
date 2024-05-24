@@ -27,7 +27,7 @@ jobs:
     - name: Deploy with rsync
       env:
         FOLDER: "./"
-      run: rsync -avz API_score_impaye.py ${{ secrets.USER_NAME }}@${{ secrets.SSH_HOST }}:/home/ec2-user/
+      run: rsync -avz ./dist/API_score_impaye.py ${{ secrets.USER_NAME }}@${{ secrets.SSH_HOST }}:/home/ec2-user/
           
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
