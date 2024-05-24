@@ -25,7 +25,7 @@ jobs:
       
       run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "ls"
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "cp https://github.com/VincentJouanneteau/ProjectScoringCredit/blob/5911feca20e37c3364f04ca80c6699cba7b9c6bd/API_score_impaye.py ./"
               # commande depuis le serveur AWS -- copie de l'API et model pickle 
           
     - uses: actions/checkout@v4
