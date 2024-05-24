@@ -25,9 +25,17 @@ jobs:
       
       run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "python3 API_score_impaye.py"
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "ls"
               # commande depuis le serveur AWS -- copie de l'API et model pickle 
-          
+    - name: copy file via ssh key
+      uses: appleboy/scp-action@v0.1.7
+      with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "API_score_impaye.py"
+          target: "./"
+    
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
