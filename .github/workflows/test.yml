@@ -25,7 +25,6 @@ jobs:
       run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "ls"
-
     
     - name: copy API via ssh key
       uses: appleboy/scp-action@v0.1.7
@@ -53,7 +52,7 @@ jobs:
             USER_NAME: ${{secrets.USER_NAME}} 
       run: |
           echo "$PRIVATE_KEY" > private_key2 && chmod 600 private_key2
-          ssh -o StrictHostKeyChecking=no -i private_key2 ${USER_NAME}@${HOSTNAME} "nohup python3 -u API_score_impaye.py > logScriptNohup.log && ls"
+          ssh -o StrictHostKeyChecking=no -i private_key2 ${USER_NAME}@${HOSTNAME} "nohup python3 API_score_impaye.py > nohup.out 2> nohup.err < /dev/null &"
 
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
