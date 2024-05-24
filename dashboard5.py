@@ -39,7 +39,7 @@ def chargement_model() :
     path_model = './mlflow_model/model.pkl'
     loaded_model = pickle.load(open(path_model, 'rb'))
     ytest_pred = loaded_model.predict_proba(xtest)[:,1]
-    explainer1 = shap.Explainer(loaded_model.predict,xtest[:10000])
+    explainer1 = shap.Explainer(loaded_model.predict,xtest)
     return loaded_model,ytest_pred,explainer1
 
 loaded_model,ytest_pred,explainer1 = chargement_model()    
@@ -52,7 +52,7 @@ def calcul_explainer() :
     feats = xtest.columns
     explainer = lime.lime_tabular.LimeTabularExplainer(xtrain[feats].values,mode='classification',training_labels=ytrain['TARGET'],
                                                        feature_names=xtest.columns.values.tolist())
-    shap_values = explainer1(xtest[:10000]) 
+    shap_values = explainer1(xtest) 
     # explainer feature importance global shap
     return feats,explainer,shap_values
 
