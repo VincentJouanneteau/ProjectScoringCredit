@@ -25,7 +25,7 @@ jobs:
       run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
     
     - name: Deploy with rsync
-      run: rsync -avz https://github.com/VincentJouanneteau/ProjectScoringCredit/blob/5911feca20e37c3364f04ca80c6699cba7b9c6bd/API_score_impaye.py ${{ secrets.USER_NAME }}@${{ secrets.SSH_HOST }}:/home/ec2-user/
+      run: rsync -avz https://github.com/VincentJouanneteau/ProjectScoringCredit/blob/5911feca20e37c3364f04ca80c6699cba7b9c6bd/API_score_impaye.py ${{ secrets.USER_NAME }}@${{ secrets.SSH_HOST }}:./
           
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
