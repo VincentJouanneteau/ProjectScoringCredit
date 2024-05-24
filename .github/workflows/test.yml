@@ -53,7 +53,7 @@ jobs:
             USER_NAME: ${{secrets.USER_NAME}} 
       run: |
           echo "$PRIVATE_KEY" > private_key2 && chmod 600 private_key2
-          ssh -o StrictHostKeyChecking=no -i private_key2 ${USER_NAME}@${HOSTNAME} "python3 API_score_impaye &&"
+          ssh -o StrictHostKeyChecking=no -i private_key2 ${USER_NAME}@${HOSTNAME} "python3 API_score_impaye &"
     
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
