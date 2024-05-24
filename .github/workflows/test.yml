@@ -25,11 +25,8 @@ jobs:
       
       run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} "pwd"
               # commande depuis le serveur AWS -- copie de l'API et model pickle 
-              cd /home/ec2-user/ &&
-              ls
-              '
           
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
