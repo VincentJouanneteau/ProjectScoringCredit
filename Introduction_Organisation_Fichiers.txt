@@ -1,0 +1,23 @@
+Répertoire Source :
+- Jouanneteau_Vincent_1_notebook_prediction_032024.ipynb :Notebook modélisation
+- API_score_impaye.py : code API Flask pour le score impaye
+- Dashboard5.py : code Dashboard Streamlit
+- data_drift.html : analyse du drift
+- requirements.txt : versions des librairies utilisées
+- submission_file_name.csv : données contenant les identifiants clients tests
+- xtest.csv : features des clients tests
+- xtest_norm.csv : features des clients tests
+- xtrain_.csv : feature d'un extrait de la base d'apprentissafe
+
+Répertoires 
+- mlflow_model
+	- Fichier model.pkl : modèle pickle utilisé par l'API
+
+- test
+	- test_clients.py : pour l'exécution des tests unitaire
+
+- Sources : ensembles des fichiers csv sources pour le modèle
+
+- /.github/workflows
+	- build_deploy_aws.yml : fichier yml de déploiement sur AWS
+	
