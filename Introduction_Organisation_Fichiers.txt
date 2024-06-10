@@ -5,9 +5,10 @@ Répertoire Source :
 - data_drift.html : analyse du drift
 - requirements.txt : versions des librairies utilisées
 - submission_file_name.csv : données contenant les identifiants clients tests
+
 - xtest.csv : features des clients tests
 - xtest_norm.csv : features des clients tests
-- xtrain_.csv : feature d'un extrait de la base d'apprentissafe
+- xtrain_.csv : feature d'un extrait de la base d'apprentissage
 
 Répertoires 
 - mlflow_model
